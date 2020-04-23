@@ -7,4 +7,17 @@ public class Empty extends Placeable {
 		this.y = y;
 	}
 
+	public void addCrate(Crate crate) {
+		this.symbol = crate.toString();
+	
+		
+		
+	}
+
+	public void addWorker(Worker worker) {
+		this.symbol = worker.toString();
+	
+	
+	}
+
 }
