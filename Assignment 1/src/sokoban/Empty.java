@@ -10,13 +10,10 @@ public class Empty extends Placeable {
 	public void addCrate(Crate crate) {
 		this.symbol = crate.toString();
 	
-		
-		
 	}
 
 	public void addWorker(Worker worker) {
 		this.symbol = worker.toString();
-	
 	
 	}
 
