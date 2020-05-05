@@ -16,5 +16,14 @@ public class Empty extends Placeable {
 		this.symbol = worker.toString();
 	
 	}
+	
+	public void removeCrate() {
+		this.symbol = ".";
+
+	}
+	
+	public void removeWorker() {
+		this.symbol = "."; 
+	}
 
 }

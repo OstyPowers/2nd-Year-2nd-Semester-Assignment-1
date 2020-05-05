@@ -16,5 +16,13 @@ public class Target extends Placeable {
 		this.symbol = worker.toString().toUpperCase();
 		
 	}
+	
+	public void removeCrate() {
+		this.symbol = "+";
+	}
+	
+	public void removeWorker() {
+		this.symbol = "+";
+	}
 
 }

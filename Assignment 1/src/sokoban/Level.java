@@ -9,6 +9,7 @@ public class Level {
 	private int moveCount = 0;
 	private String leveltext;
 	private int completedCount = 0;
+	protected Placeable[] [] allPlaceables;
 	
 	
 
@@ -17,6 +18,7 @@ public class Level {
 		this.width = width;
 		this.height = height;
 		this.leveltext = leveltext;
+		this.allPlaceables = new Placeable [height][width];
 		readLevel();
 	}
 
@@ -54,22 +56,37 @@ public class Level {
 		}
 		leveltext = tempString;
 	}
-	// i need to change and add capital symbols in switch
+	
 	public void readChara(char cara,int x,int y) {
 		Placeable result;
 		switch (cara) {
 		case '.':
+			result = new Empty(x,y);
 			break;
 		case '#':
+			result = new Wall(x,y);
 			break;
 		case '+':
+			result = new Target(x,y);
 			targetCount++;
 			break;
 		case 'x':
+			Empty empty = new Empty(x,y);
+			Crate crate = new Crate(x,y);
+			empty.addCrate(crate);
+			result = empty;
 			break;
 		case 'w':
+			Empty emp = new Empty(x,y);
+			Worker worker = new Worker(x,y);
+			emp.addWorker(worker);
+			result = emp;
+			break;
+		default: 
+			result = new Empty(x,y);
 			break;
 		}
+		this.allPlaceables[y][x] = result;
 	}
 	
 	public String toString() {
