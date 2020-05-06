@@ -10,8 +10,8 @@ public enum Direction {
 	
 	private final Point p;
 	
-	private Direction(int y, int x) {
-		p = new Point (y,x);
+	private Direction(int x, int y) {
+		p = new Point (x,y);
 	}
 	
 	public Point offset() {

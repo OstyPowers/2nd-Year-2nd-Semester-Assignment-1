@@ -8,12 +8,12 @@ public class Target extends Placeable {
 	}
 
 	public void addCrate(Crate crate) {
-		this.symbol = crate.toString().toUpperCase();
+		this.symbol = "X";
 	
 	}
 
 	public void addWorker(Worker worker) {
-		this.symbol = worker.toString().toUpperCase();
+		this.symbol = "W";
 		
 	}
 	

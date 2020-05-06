@@ -3,7 +3,6 @@ package sokoban;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.javafx.scene.traversal.Direction;
 
 public class Game {
 	private Level currentLevel;
@@ -29,7 +28,7 @@ public class Game {
 	}
 	
 	public String toString() {
-		return this.getCurrentLevelName();
+		return this.currentLevel.toString();
 	}
 
 	public void addLevel(String name, int height, int width, String leveltext) {
@@ -41,9 +40,9 @@ public class Game {
 		this.levNames.add(name);
 	}
 
-	public void move(Direction d) {
-		
-		
+	public void move(Direction direction) {
+		this.currentLevel.moveCount++;
+		this.currentLevel.move(direction);
 	}
 		
 }
