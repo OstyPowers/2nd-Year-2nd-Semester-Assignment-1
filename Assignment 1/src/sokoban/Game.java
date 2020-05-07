@@ -28,7 +28,7 @@ public class Game {
 	}
 	
 	public String toString() {
-		return this.currentLevel.toString();
+		return this.currentLevelName.toString();
 	}
 
 	public void addLevel(String name, int height, int width, String leveltext) {
