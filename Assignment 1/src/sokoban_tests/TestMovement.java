@@ -35,6 +35,7 @@ class TestMovement {
 		assertTrue(expectedLevelString.equals(actualLevelString), errorMessage);
 		
 	}
+	
 	@Test
 	void testMovement_moveRight() {
 	// act
@@ -193,6 +194,26 @@ class TestMovement {
 	}
 	
 	@Test
+	void testMovement_moveUpOntoTargetandOffTarget() {
+	// act
+		this.game.move(Direction.UP);
+		this.game.move(Direction.RIGHT);
+	// assert
+		String expectedLevelString = "Level1" + "\n" +
+				"######" + "\n" +
+				"#+x+w#" + "\n" +
+				"#....#" + "\n" +
+				"#....#" + "\n" +
+				"######" + "\n" +
+				"move 2" + "\n" +
+				"completed 0 of 2" + "\n";
+		String actualLevelString = game.getCurrentLevel().toString();
+		String errorMessage = "Wanted\n" + expectedLevelString + "\nGOT\n" + actualLevelString;
+		assertTrue(expectedLevelString.equals(actualLevelString), errorMessage);
+		
+	}
+	
+	@Test
 	void testMovement_moveCratetoTarget() {
 	// act
 		this.game.move(Direction.UP);
@@ -226,6 +247,28 @@ class TestMovement {
 				"#....#" + "\n" +
 				"######" + "\n" +
 				"move 3" + "\n" +
+				"completed 0 of 2" + "\n";
+		String actualLevelString = game.getCurrentLevel().toString();
+		String errorMessage = "Wanted\n" + expectedLevelString + "\nGOT\n" + actualLevelString;
+		assertTrue(expectedLevelString.equals(actualLevelString), errorMessage);
+		
+	}
+	@Test
+	void testMovement_moveCratetoTargetthenOff() {
+	// act
+		this.game.move(Direction.LEFT);
+		this.game.move(Direction.LEFT);
+		this.game.move(Direction.UP);
+		this.game.move(Direction.RIGHT);
+		this.game.move(Direction.RIGHT);
+	// assert
+		String expectedLevelString = "Level1" + "\n" +
+				"######" + "\n" +
+				"#+.Wx#" + "\n" +
+				"#....#" + "\n" +
+				"#....#" + "\n" +
+				"######" + "\n" +
+				"move 5" + "\n" +
 				"completed 0 of 2" + "\n";
 		String actualLevelString = game.getCurrentLevel().toString();
 		String errorMessage = "Wanted\n" + expectedLevelString + "\nGOT\n" + actualLevelString;
